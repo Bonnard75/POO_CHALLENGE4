@@ -20,3 +20,5 @@ class Car
         $this->hasParkBrake = $hasParkBrake;
     }
 } 
+
+?>
