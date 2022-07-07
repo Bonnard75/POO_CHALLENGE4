@@ -1,24 +1,22 @@
 <?php
 
-class Car
-{
-    private string $energy;
-    private int $energyLevel;
-    private bool $hasParkBrake;
+require_once 'Car.php';
 
 
-    public function start(): void
-    {
-        if ($this->hasParkBrake) {
-            throw new Exception("Le frein à main est enclenché ");
-        }
-    }
+$Car = new Car('skyblue', 4, 'Electric');
+$Car->sethasParkBrake(true);
 
+echo "<br>";
 
-    public function setHasParkBrake(bool $hasParkBrake): void
-    {
-        $this->hasParkBrake = $hasParkBrake;
-    }
+try {
+    $Car->start();
+} catch (Exception $e) {
+    echo "Exception received  : " . $e->getMessage();
+    echo "<br>";
+    echo "<br>";
+} finally {
+    echo "Ma voiture roule comme un donut bien gras !!!!";
+    echo "<br>";
 }
 
 ?>
